@@ -66,7 +66,7 @@ export const Home = () => {
   return (
     <div className="wrapper mx-auto">
       <div className="m-5 text-center">
-        <h1>All In One Cryptoasdad Tools</h1>
+        <h1>All In One Crypto Tools</h1>
       </div>
       <div>
         <Dropdown
@@ -77,8 +77,8 @@ export const Home = () => {
         <TextArea
           label={
             algoOptionData === 'decrypt'
-              ? 'Enter data to be Decrypted'
-              : 'Enter data to be Ecrypted'
+              ? 'Enter data to be Decrypt'
+              : 'Enter data to be Encrypt'
           }
           rowCount="3"
           isDataNeeded={true}
