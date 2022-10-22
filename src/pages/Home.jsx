@@ -17,23 +17,24 @@ export const Home = () => {
   const AesRef = useRef();
 
   const algoDropdownData = [
-    { id: 1, name: 'encrypt', value: 'encrypt' },
-    { id: 2, name: 'decrypt', value: 'decrypt' },
+    { id: 1, name: 'Encryption', value: 'encrypt' },
+    { id: 2, name: 'Decryption', value: 'decrypt' },
   ];
   const typeEncryptDropdownData = [
-    { id: 1, name: 'Base 64', value: 'Base 64' },
-    { id: 2, name: 'URL Encoded', value: 'URL Encoded' },
-    { id: 3, name: 'String To Bytes', value: 'S2A' },
-    { id: 4, name: 'AES Encypt', value: 'AESEN' },
+    { id: 1, name: 'Base64', value: 'Base64' },
+    { id: 2, name: 'URL Encode', value: 'URLEnDe' },
+    { id: 3, name: 'Text to ASCII', value: 'S2A' },
+    { id: 4, name: 'AES', value: 'AESEN' },
   ];
   const typeDecryptDropdownData = [
-    { id: 1, name: 'Base 64', value: 'Base 64' },
-    { id: 2, name: 'URL Encoded', value: 'URL Encoded' },
-    { id: 3, name: 'String To Bytes', value: 'S2A' },
-    { id: 4, name: 'AES Decrypt', value: 'AESEN' },
+    { id: 1, name: 'Base64', value: 'Base64' },
+    { id: 2, name: 'URL Decode', value: 'URLEnDe' },
+    { id: 3, name: 'ASCII to Text', value: 'S2A' },
+    { id: 4, name: 'AES', value: 'AESEN' },
   ];
-  const algoDropdownLabel = 'Choose algoridhm:';
-  const typeDropdownLabel = 'Encryption Type:';
+  const algoDropdownLabel = 'Choose Algorithm: ';
+  const typeDropdownLabel =
+    algoOptionData === 'decrypt' ? 'Decryption Type: ' : 'Encryption Type: ';
 
   const setAlgoOption = (data) => {
     setAlgoOptionData(data);
@@ -48,10 +49,10 @@ export const Home = () => {
       case undefined:
         base64Ref.current.base64Onclick();
         break;
-      case 'Base 64':
+      case 'Base64':
         base64Ref.current.base64Onclick();
         break;
-      case 'URL Encoded':
+      case 'URLEnDe':
         urlRef.current.UrlOnclick();
         break;
       case 'S2A':
@@ -77,8 +78,8 @@ export const Home = () => {
         <TextArea
           label={
             algoOptionData === 'decrypt'
-              ? 'Enter data to be Decrypt'
-              : 'Enter data to be Encrypt'
+              ? 'Enter data to be Decrypt: '
+              : 'Enter data to be Encrypt: '
           }
           rowCount="3"
           isDataNeeded={true}
@@ -88,8 +89,8 @@ export const Home = () => {
         {algoTypenData === 'AESEN' && (
           <div className="my-3">
             <TextArea
-              label="Key"
-              rowCount="2"
+              label="Enter Key: "
+              rowCount="1"
               isDataNeeded={true}
               isCopyNeeded={true}
               dataEmit={(data) => setKey(data)}
@@ -114,18 +115,18 @@ export const Home = () => {
           disabled={mainTextAreaData === ''}
           onClick={onClickHandler}
         >
-          {algoOptionData === 'decrypt' ? 'Decrypt' : 'Ecrypt'}
+          {algoOptionData === 'decrypt' ? 'Decrypt' : 'Encrypt'}
         </button>
       </div>
       <div className="my-3">
-        {(algoTypenData === undefined || algoTypenData === 'Base 64') && (
+        {(algoTypenData === undefined || algoTypenData === 'Base64') && (
           <Base64Component
             ref={base64Ref}
             data={mainTextAreaData}
             type={algoOptionData === 'decrypt' ? 1 : 0}
           />
         )}
-        {algoTypenData === 'URL Encoded' && (
+        {algoTypenData === 'URLEnDe' && (
           <UrlEncoderComponent
             ref={urlRef}
             data={mainTextAreaData}

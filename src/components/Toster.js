@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 
 export const Toster = (msg, type) => {
-  const massege = msg;
+  const message = msg;
   const config = {
     position: 'top-right',
     autoClose: 2000,
@@ -13,8 +13,8 @@ export const Toster = (msg, type) => {
     theme: 'light',
   };
   if (type === 1) {
-    toast.success(massege, config);
+    toast.success(message, config);
   } else {
-    toast.error(massege, config);
+    toast.error(message, config);
   }
 };

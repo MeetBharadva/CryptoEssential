@@ -28,7 +28,7 @@ export const UrlEncoderComponent = forwardRef((props, ref) => {
   return (
     <div>
       <TextArea
-        label="output data"
+        label="Result: "
         rowCount="3"
         acceptValue={props.type === 0 ? encodedData : decodedData}
       />

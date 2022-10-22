@@ -2,13 +2,20 @@ import './App.css';
 import { Home } from './pages/Home';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { NavBar } from './components/NavBar';
+import { Routes, Route } from 'react-router-dom';
+import { ArithMetic } from './pages/ArithMetic';
 function App() {
   return (
-    <div className="example-box">
-      <div className="background-shapes"></div>
+    <div>
       <ToastContainer />
-      <Home />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/arithmetic" element={<ArithMetic />} />
+
+        {/* <Route path="*" element={<NoMatch />} /> */}
+      </Routes>
     </div>
   );
 }

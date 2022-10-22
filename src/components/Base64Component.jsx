@@ -25,7 +25,7 @@ export const Base64Component = forwardRef((props, ref) => {
       const decoded = cryptoJs.enc.Utf8.stringify(decodedWord);
       setDecodedData(decoded);
     } catch (error) {
-      Toster('Provided data is not encoded!');
+      Toster('Error: Provided data is not Encrypted!');
     }
   };
   useImperativeHandle(ref, () => ({
@@ -37,7 +37,7 @@ export const Base64Component = forwardRef((props, ref) => {
   return (
     <div>
       <TextArea
-        label="output data"
+        label="Result: "
         rowCount="3"
         acceptValue={props.type === 0 ? encodedData : decodedData}
       />

@@ -1,7 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 export const Dropdown = ({ data, ddLabel, selectedData }) => {
   const [selectedOption, setSelectedOption] = useState(data[0].value);
+  useEffect(() => {
+    setSelectedOption(data[0].value);
+  }, [data]);
+
   const onDropDownChange = (e) => {
     selectedData(e.target.value);
     setSelectedOption(e.target.value);
@@ -12,7 +16,7 @@ export const Dropdown = ({ data, ddLabel, selectedData }) => {
         {ddLabel}
       </label>
       <select
-        class="form-select ms-2"
+        className="form-select ms-2"
         style={{ maxWidth: '200px' }}
         name={data.name}
         id={data.name}
@@ -21,7 +25,7 @@ export const Dropdown = ({ data, ddLabel, selectedData }) => {
       >
         {data &&
           data.map((singleData) => (
-            <option key={singleData.id} value={singleData.value}>
+            <option key={singleData.value} value={singleData.value}>
               {singleData.name}
             </option>
           ))}

@@ -23,7 +23,7 @@ export const Aes = forwardRef((props, ref) => {
       const plain = decrypted.toString(cryptoJs.enc.Utf8);
       setDecodedData(plain);
     } catch (error) {
-      Toster('Provided data is not encoded!');
+      Toster('Error: Provided data is not encoded!');
     }
   };
   useImperativeHandle(ref, () => ({
@@ -38,7 +38,7 @@ export const Aes = forwardRef((props, ref) => {
     <>
       <div>
         <TextArea
-          label="output data"
+          label="Result: "
           rowCount="3"
           acceptValue={props.type === 0 ? encodedData : decodedData}
         />
