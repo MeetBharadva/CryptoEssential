@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.2a2eeb3d.css",
-    "main.js": "/static/js/main.b656355f.js",
-    "index.html": "/index.html",
-    "main.2a2eeb3d.css.map": "/static/css/main.2a2eeb3d.css.map",
-    "main.b656355f.js.map": "/static/js/main.b656355f.js.map"
+    "main.css": "/CryptoEssential/static/css/main.2a2eeb3d.css",
+    "main.js": "/CryptoEssential/static/js/main.b656355f.js",
+    "index.html": "/CryptoEssential/index.html",
+    "main.2a2eeb3d.css.map": "/CryptoEssential/static/css/main.2a2eeb3d.css.map",
+    "main.b656355f.js.map": "/CryptoEssential/static/js/main.b656355f.js.map"
   },
   "entrypoints": [
     "static/css/main.2a2eeb3d.css",
