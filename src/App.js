@@ -10,11 +10,10 @@ function App() {
     <div>
       <ToastContainer />
       <NavBar />
+    
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/arithmetic" element={<ArithMetic />} />
-
-        {/* <Route path="*" element={<NoMatch />} /> */}
       </Routes>
     </div>
   );
